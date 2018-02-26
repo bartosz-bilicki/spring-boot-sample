@@ -3,7 +3,7 @@ package hello;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-@RestController
+@RestController // special type of @Component
 public class HelloController {
     
     @RequestMapping("/")
