@@ -1,10 +1,14 @@
-package hello;
+package hello.propereties;
 
+import hello.properties.PropertiesService;
 import org.junit.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
+/**
+ * Spring-free, pure junit test.
+ */
 public class PropertiesServiceTest {
 
     @Test

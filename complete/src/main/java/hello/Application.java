@@ -11,6 +11,9 @@ import java.util.Arrays;
 @SpringBootApplication
 public class Application {
 
+    /*
+    entry point for spring app. always the same.
+     */
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }

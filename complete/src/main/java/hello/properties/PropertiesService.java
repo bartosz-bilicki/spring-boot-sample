@@ -1,4 +1,4 @@
-package hello;
+package hello.properties;
 
 
 import org.slf4j.Logger;
@@ -12,6 +12,7 @@ import java.net.URL;
 @Service
 public class PropertiesService {
     private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
 
     public PropertiesService(
             @Value("${dummy.number}") int number,
