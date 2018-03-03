@@ -1,0 +1,23 @@
+gs-spring-boot sample. For of official tutorial.
+Start with Application#main, describe entry point.
+Describe that CommandLineRunner is optional.
+
+
+Show HelloController.  Show http://localhost:8080/
+In spring world, new is for value objects or entities.
+Show HelloControllerIT, HelloControllerMockMvcTest
+
+
+Show Person. Explain Lombok.
+
+Show PersonDatabase.
+
+Show PersonService. Explain injections, @Rest(Controller), @Repository and @Service from DDDServices are immutable, thread- safe.
+Show PersonServiceTest. Explain value of such small, fast unit tests.Show assertJ assertions. Explain why fine-tuned assertions are important.
+
+PropertiesService. How spling handles properties (including mapping of numbers, URLs, Custom types)WrongPropertiesIntegrationTest, profiles
+
+SampleConfigurationspring beans from objects we cannot/do not want to annotate
+
+Summary: Allows to concentrate on business logic. One should create many small beans and compose them. And test them in isolation
+

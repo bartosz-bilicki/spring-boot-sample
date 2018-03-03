@@ -8,6 +8,9 @@ import java.lang.invoke.MethodHandles;
 import java.util.Arrays;
 import java.util.List;
 
+/*
+In production it would be real database.
+ */
 @Repository
 public class PersonDatabase {
     private static final Logger LOG= LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

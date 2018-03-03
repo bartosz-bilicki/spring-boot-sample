@@ -8,9 +8,17 @@ import java.lang.invoke.MethodHandles;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/*
+  @Rest(Controller), @Repository and @Service from 'Domain-Driven Design'.
+  Repository returns entities.
+  Service uses repository
+  Controller uses services.
+ */
 @Service
 public class PersonService {
     private static final Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
+
+    //thread-safe, no mutable state. just immutable, injected collaborators
 
     //collaborator (another service)
     private final PersonDatabase personDatabase;

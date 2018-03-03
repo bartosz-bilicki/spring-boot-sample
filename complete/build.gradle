@@ -15,9 +15,6 @@ apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
 
-
-
-
 jar {
     baseName = 'gs-spring-boot'
     version =  '0.1.0'
@@ -34,11 +31,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 dependencies {
+    //version numbers come from Spring Boot BOM
     compile("org.springframework.boot:spring-boot-starter-web")
     compile("org.springframework.boot:spring-boot-starter-actuator")
+    compile("org.springframework.boot:spring-boot-starter-hateoas") //
+    compile("org.springframework.data:spring-data-commons")
 
     testCompile("org.springframework.boot:spring-boot-starter-test")
     testCompile 'org.assertj:assertj-core:3.9.0'
-
 }
 

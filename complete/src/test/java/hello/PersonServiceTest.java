@@ -7,6 +7,9 @@ import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/*
+    Pure Junit test. May use mocks (or any different implementations) for collaborators.
+ */
 public class PersonServiceTest {
 
     @Test
@@ -25,7 +28,7 @@ public class PersonServiceTest {
     @Test
     public void shouldFindOneSmartPerson() {
         //given one-smart-person database
-        Person smartPerson = Person.builder().name("person1").smart(false).build();
+        Person smartPerson = Person.builder().name("person1").smart(true).build();
         PersonDatabase personDatabase = new PersonDatabase(
                 Arrays.asList(
                         smartPerson
@@ -36,7 +39,9 @@ public class PersonServiceTest {
         List<Person> people = sut.smartPersons();
 
         //then
+        //assertJ assertion here. Library where everything you need to know is ctrl_space:)
         assertThat(people).containsExactly(smartPerson);
+
         //assertion below is BAD for multiple reasons
         //Assert.assertTrue(people.contains(smartPerson));
     }

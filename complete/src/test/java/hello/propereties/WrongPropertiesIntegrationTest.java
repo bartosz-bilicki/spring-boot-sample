@@ -3,16 +3,15 @@ package hello.propereties;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /*
 Spring integration test. read properties value from application-wrongProperties.properties file
  */
-@ActiveProfiles("wrongProperties")
+//@ActiveProfiles("wrongProperties")
 @SpringBootTest
 @RunWith(SpringRunner.class)
-public class ApplicationWrongPropertiesTest {
+public class WrongPropertiesIntegrationTest {
 
     /*
   when property value has invalid type

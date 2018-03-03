@@ -1,10 +1,5 @@
 package hello;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.junit.Assert.assertThat;
-
-import java.net.URL;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,17 +10,25 @@ import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.net.URL;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+/*
+True integration tests.
+start application, uses HTTP client.
+ */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) //random port!
 public class HelloControllerIT {
 
     @LocalServerPort
-    private int port;
+    private int port;   //injected value of that random port
 
     private URL base;
 
     @Autowired
-    private TestRestTemplate template;
+    private TestRestTemplate template;  //injected HTTP client
 
     @Before
     public void setUp() throws Exception {
@@ -33,9 +36,12 @@ public class HelloControllerIT {
     }
 
     @Test
-    public void getHello() throws Exception {
+    public void getHello() {
+        //when
         ResponseEntity<String> response = template.getForEntity(base.toString(),
                 String.class);
-        assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+
+        //then
+        assertThat(response.getBody()).isEqualTo("Greetings from Spring Boot!");
     }
 }
